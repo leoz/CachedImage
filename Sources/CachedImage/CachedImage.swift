@@ -9,13 +9,13 @@
 import SwiftUI
 
 public struct CachedImage<Placeholder: View, Content: View>: View {
-    private let url: URL
+    private let url: URL?
     private let content: (Image) -> Content
     private let placeholder: Placeholder
     @StateObject private var loader: ImageLoader
 
     public init(
-        url: URL,
+        url: URL?,
         content: @escaping (Image) -> Content,
         placeholder: @escaping () -> Placeholder
     ) {
@@ -24,7 +24,6 @@ public struct CachedImage<Placeholder: View, Content: View>: View {
         self.placeholder = placeholder()
         _loader = StateObject(
             wrappedValue: ImageLoader(
-                url: url,
                 cache: Environment(\.imageCache).wrappedValue
             )
         )
@@ -32,9 +31,15 @@ public struct CachedImage<Placeholder: View, Content: View>: View {
 
     public var body: some View {
         contentOrImage
-            .onAppear(perform: loader.load)
+            .onAppear {
+                if let _url = url {
+                    loader.load(url: _url)
+                }
+            }
             .onChange(of: url) { newUrl in
-                loader.reload(url: newUrl)
+                if let _url = newUrl {
+                    loader.reload(url: _url)
+                }
             }
     }
 

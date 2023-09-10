@@ -14,14 +14,12 @@ class ImageLoader: ObservableObject {
 
     private(set) var isLoading = false
 
-    private var url: URL
     private var cache: ImageCache?
     private var cancellable: AnyCancellable?
 
     private static let imageProcessingQueue = DispatchQueue(label: "image-processing")
 
-    init(url: URL, cache: ImageCache? = nil) {
-        self.url = url
+    init(cache: ImageCache? = nil) {
         self.cache = cache
     }
 
@@ -29,7 +27,7 @@ class ImageLoader: ObservableObject {
         cancel()
     }
 
-    func load() {
+    func load(url: URL) {
         guard !isLoading else { return }
 
         if let image = cache?[url] {
@@ -41,7 +39,7 @@ class ImageLoader: ObservableObject {
             .map { PlatformImage(data: $0.data) }
             .replaceError(with: nil)
             .handleEvents(receiveSubscription: { [weak self] _ in self?.onStart() },
-                          receiveOutput: { [weak self] in self?.cache($0) },
+                          receiveOutput: { [weak self] in self?.cache($0, url) },
                           receiveCompletion: { [weak self] _ in self?.onFinish() },
                           receiveCancel: { [weak self] in self?.onFinish() })
             .subscribe(on: Self.imageProcessingQueue)
@@ -51,8 +49,7 @@ class ImageLoader: ObservableObject {
 
     func reload(url: URL) {
         cancel()
-        self.url = url
-        load()
+        load(url: url)
     }
 
     func cancel() {
@@ -67,7 +64,7 @@ class ImageLoader: ObservableObject {
         isLoading = false
     }
 
-    private func cache(_ image: PlatformImage?) {
+    private func cache(_ image: PlatformImage?, _ url: URL) {
         image.map { cache?[url] = $0 }
     }
 }

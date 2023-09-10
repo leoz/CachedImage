@@ -24,7 +24,7 @@ public struct CachedImage<Placeholder: View>: View {
         self.url = url
         _loader = StateObject(wrappedValue: ImageLoader(url: url, cache: Environment(\.imageCache).wrappedValue))
     }
-    
+
     public var body: some View {
         content
             .onAppear(perform: loader.load)
@@ -32,7 +32,7 @@ public struct CachedImage<Placeholder: View>: View {
                 loader.reload(url: newUrl)
             }
     }
-    
+
     private var content: some View {
         Group {
             if loader.image != nil {

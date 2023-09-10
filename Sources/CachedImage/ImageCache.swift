@@ -19,9 +19,13 @@ struct TemporaryImageCache: ImageCache {
         cache.totalCostLimit = 1024 * 1024 * 100 // 100 MB
         return cache
     }()
-    
+
     subscript(_ key: URL) -> UIImage? {
         get { cache.object(forKey: key as NSURL) }
-        set { newValue == nil ? cache.removeObject(forKey: key as NSURL) : cache.setObject(newValue!, forKey: key as NSURL) }
+        set {
+            newValue == nil ?
+                cache.removeObject(forKey: key as NSURL) :
+                cache.setObject(newValue!, forKey: key as NSURL)
+        }
     }
 }

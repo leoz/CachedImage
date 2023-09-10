@@ -1,5 +1,8 @@
 # CachedImage
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoz%2FCachedImage%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/leoz/CachedImage)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoz%2FCachedImage%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/leoz/CachedImage)
+
 `CachedImage` is a SwiftUI component to asynchronously load and display an image provided by its URL. 
 
 This package is based on the [AsyncImage](https://github.com/V8tr/AsyncImage) project published by [Vadim Bulavin](https://github.com/V8tr) and described in the [Asynchronous Image Loading from URL in SwiftUI](https://www.vadimbulavin.com/asynchronous-swiftui-image-loading-from-url-with-combine-and-swift/) article.

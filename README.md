@@ -36,5 +36,5 @@ struct ContentView: View {
 Result:
 
 <p align="center">
-  <img src="https://github.com/V8tr/CachedImage/blob/master/demo.gif" alt="How to load image from URL asynchronously in SwiftUI"/>
+  <img src="./demo.gif" alt="How to load image from URL asynchronously in SwiftUI"/>
 </p>

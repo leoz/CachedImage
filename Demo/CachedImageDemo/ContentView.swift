@@ -18,14 +18,16 @@ let posters = [
 
 struct ContentView: View {
     var body: some View {
-         List(posters, id: \.self) { url in
-             CachedImage(
-                url: url,
-                placeholder: { Text("Loading ...") },
-                image: { Image(platformImage: $0).resizable() }
-             )
-            //.frame(idealHeight: UIScreen.main.bounds.width / 2 * 3) // 2:3 aspect ratio
-         }
+        GeometryReader { geometry in
+            List(posters, id: \.self) { url in
+                CachedImage(
+                    url: url,
+                    placeholder: { Text("Loading ...") },
+                    image: { Image(platformImage: $0).resizable() }
+                )
+                .frame(idealHeight: geometry.size.width / 2 * 3) // 2:3 aspect ratio
+            }
+        }
     }
 }
 

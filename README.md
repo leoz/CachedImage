@@ -1,40 +1,44 @@
-## Article related to this project
-
-- [Asynchronous Image Loading from URL in SwiftUI](https://www.vadimbulavin.com/asynchronous-swiftui-image-loading-from-url-with-combine-and-swift/).
-
----
-
 # CachedImage
 
-The project demonstrates how to load images asynchronously in SwiftUI.
+`CachedImage` is a SwiftUI component to asynchronously load and display an image provided by its URL. 
 
-Usage:
+This package is based on the [AsyncImage](https://github.com/V8tr/AsyncImage) project published by [Vadim Bulavin](https://github.com/V8tr) and described in the [Asynchronous Image Loading from URL in SwiftUI](https://www.vadimbulavin.com/asynchronous-swiftui-image-loading-from-url-with-combine-and-swift/) article.
+
+## Usage
 
 ```swift
 // Image URLs to load
 let posters = [
-    "https://image.tmdb.org/t/p/original/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
-    "https://image.tmdb.org/t/p/original/vqzNJRH4YyquRiWxCCOH0aXggHI.jpg",
-    "https://image.tmdb.org/t/p/original/6ApDtO7xaWAfPqfi2IARXIzj8QS.jpg",
-    "https://image.tmdb.org/t/p/original/7GsM4mtM0worCtIVeiQt28HieeN.jpg"
+    "https://picsum.photos/800/600?random=1",
+    "https://picsum.photos/600/800?random=2",
+    "https://picsum.photos/800/600?random=3",
+    "https://picsum.photos/600/800?random=4"
 ].map { URL(string: $0)! }
 
 struct ContentView: View {
     var body: some View {
-         List(posters, id: \.self) { url in
-             CachedImage(
-                url: url,
-                placeholder: { Text("Loading ...") },
-                image: { Image(platformImage: $0).resizable() }
-             )
-            .frame(idealHeight: UIScreen.main.bounds.width / 2 * 3) // 2:3 aspect ratio
-         }
+        GeometryReader { geometry in
+            List(posters, id: \.self) { url in
+                CachedImage(
+                    url: url,
+                    placeholder: { Text("Loading ...") },
+                    image: { Image(platformImage: $0).resizable() }
+                )
+                .frame(idealHeight: geometry.size.width / 2 * 3) // 2:3 aspect ratio
+            }
+        }
     }
 }
 ```
 
-Result:
+## Demo
+
+Check the demo project provided [here](./Demo/).
 
 <p align="center">
   <img src="./demo.gif" alt="How to load image from URL asynchronously in SwiftUI"/>
 </p>
+
+## License
+
+[Unlicensed](./LICENSE.md)

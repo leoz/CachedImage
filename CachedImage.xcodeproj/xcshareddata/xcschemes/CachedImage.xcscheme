@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8055F79723F5A66200CB2CD4"
-               BuildableName = "AsyncImage.app"
-               BlueprintName = "AsyncImage"
-               ReferencedContainer = "container:AsyncImage.xcodeproj">
+               BuildableName = "CachedImage.app"
+               BlueprintName = "CachedImage"
+               ReferencedContainer = "container:CachedImage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8055F79723F5A66200CB2CD4"
-            BuildableName = "AsyncImage.app"
-            BlueprintName = "AsyncImage"
-            ReferencedContainer = "container:AsyncImage.xcodeproj">
+            BuildableName = "CachedImage.app"
+            BlueprintName = "CachedImage"
+            ReferencedContainer = "container:CachedImage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8055F79723F5A66200CB2CD4"
-            BuildableName = "AsyncImage.app"
-            BlueprintName = "AsyncImage"
-            ReferencedContainer = "container:AsyncImage.xcodeproj">
+            BuildableName = "CachedImage.app"
+            BlueprintName = "CachedImage"
+            ReferencedContainer = "container:CachedImage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

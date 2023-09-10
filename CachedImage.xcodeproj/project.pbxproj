@@ -14,14 +14,14 @@
 		8055F7A223F5A66300CB2CD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8055F7A123F5A66300CB2CD4 /* Assets.xcassets */; };
 		8055F7A523F5A66300CB2CD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8055F7A423F5A66300CB2CD4 /* Preview Assets.xcassets */; };
 		8055F7A823F5A66300CB2CD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8055F7A623F5A66300CB2CD4 /* LaunchScreen.storyboard */; };
-		8055F7B223F5A72B00CB2CD4 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055F7B123F5A72B00CB2CD4 /* AsyncImage.swift */; };
+		8055F7B223F5A72B00CB2CD4 /* CachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055F7B123F5A72B00CB2CD4 /* CachedImage.swift */; };
 		8055F7B423F5A73100CB2CD4 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055F7B323F5A73100CB2CD4 /* ImageLoader.swift */; };
 		886A36C2242A27A7004D5DC7 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A36C1242A27A7004D5DC7 /* EnvironmentValues+ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		800DAA0723FD8B6700F5AE02 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		8055F79823F5A66200CB2CD4 /* AsyncImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8055F79823F5A66200CB2CD4 /* CachedImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CachedImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8055F79B23F5A66200CB2CD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8055F79D23F5A66200CB2CD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8055F79F23F5A66200CB2CD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,7 +29,7 @@
 		8055F7A423F5A66300CB2CD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8055F7A723F5A66300CB2CD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8055F7A923F5A66300CB2CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8055F7B123F5A72B00CB2CD4 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		8055F7B123F5A72B00CB2CD4 /* CachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImage.swift; sourceTree = "<group>"; };
 		8055F7B323F5A73100CB2CD4 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		886A36C1242A27A7004D5DC7 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +48,7 @@
 		8055F78F23F5A66200CB2CD4 = {
 			isa = PBXGroup;
 			children = (
-				8055F79A23F5A66200CB2CD4 /* AsyncImage */,
+				8055F79A23F5A66200CB2CD4 /* CachedImage */,
 				8055F79923F5A66200CB2CD4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +56,15 @@
 		8055F79923F5A66200CB2CD4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8055F79823F5A66200CB2CD4 /* AsyncImage.app */,
+				8055F79823F5A66200CB2CD4 /* CachedImage.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8055F79A23F5A66200CB2CD4 /* AsyncImage */ = {
+		8055F79A23F5A66200CB2CD4 /* CachedImage */ = {
 			isa = PBXGroup;
 			children = (
-				8055F7B123F5A72B00CB2CD4 /* AsyncImage.swift */,
+				8055F7B123F5A72B00CB2CD4 /* CachedImage.swift */,
 				8055F79F23F5A66200CB2CD4 /* ContentView.swift */,
 				800DAA0723FD8B6700F5AE02 /* ImageCache.swift */,
 				8055F7B323F5A73100CB2CD4 /* ImageLoader.swift */,
@@ -73,7 +73,7 @@
 				8055F7A323F5A66300CB2CD4 /* Preview Content */,
 				8055F7AF23F5A6E500CB2CD4 /* SupportingFiles */,
 			);
-			path = AsyncImage;
+			path = CachedImage;
 			sourceTree = "<group>";
 		};
 		8055F7A323F5A66300CB2CD4 /* Preview Content */ = {
@@ -106,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8055F79723F5A66200CB2CD4 /* AsyncImage */ = {
+		8055F79723F5A66200CB2CD4 /* CachedImage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8055F7AC23F5A66300CB2CD4 /* Build configuration list for PBXNativeTarget "AsyncImage" */;
+			buildConfigurationList = 8055F7AC23F5A66300CB2CD4 /* Build configuration list for PBXNativeTarget "CachedImage" */;
 			buildPhases = (
 				8055F79423F5A66200CB2CD4 /* Sources */,
 				8055F79523F5A66200CB2CD4 /* Frameworks */,
@@ -118,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = AsyncImage;
-			productName = AsyncImage;
-			productReference = 8055F79823F5A66200CB2CD4 /* AsyncImage.app */;
+			name = CachedImage;
+			productName = CachedImage;
+			productReference = 8055F79823F5A66200CB2CD4 /* CachedImage.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8055F79323F5A66200CB2CD4 /* Build configuration list for PBXProject "AsyncImage" */;
+			buildConfigurationList = 8055F79323F5A66200CB2CD4 /* Build configuration list for PBXProject "CachedImage" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8055F79723F5A66200CB2CD4 /* AsyncImage */,
+				8055F79723F5A66200CB2CD4 /* CachedImage */,
 			);
 		};
 /* End PBXProject section */
@@ -174,7 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8055F7B223F5A72B00CB2CD4 /* AsyncImage.swift in Sources */,
+				8055F7B223F5A72B00CB2CD4 /* CachedImage.swift in Sources */,
 				800DAA0823FD8B6700F5AE02 /* ImageCache.swift in Sources */,
 				886A36C2242A27A7004D5DC7 /* EnvironmentValues+ImageCache.swift in Sources */,
 				8055F79C23F5A66200CB2CD4 /* AppDelegate.swift in Sources */,
@@ -319,14 +319,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"AsyncImage/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CachedImage/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AsyncImage/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = CachedImage/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = v8tr.AsyncImage;
+				PRODUCT_BUNDLE_IDENTIFIER = v8tr.CachedImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,14 +338,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"AsyncImage/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CachedImage/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AsyncImage/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = CachedImage/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = v8tr.AsyncImage;
+				PRODUCT_BUNDLE_IDENTIFIER = v8tr.CachedImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -355,7 +355,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8055F79323F5A66200CB2CD4 /* Build configuration list for PBXProject "AsyncImage" */ = {
+		8055F79323F5A66200CB2CD4 /* Build configuration list for PBXProject "CachedImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8055F7AA23F5A66300CB2CD4 /* Debug */,
@@ -364,7 +364,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8055F7AC23F5A66300CB2CD4 /* Build configuration list for PBXNativeTarget "AsyncImage" */ = {
+		8055F7AC23F5A66300CB2CD4 /* Build configuration list for PBXNativeTarget "CachedImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8055F7AD23F5A66300CB2CD4 /* Debug */,

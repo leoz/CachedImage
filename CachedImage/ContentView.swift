@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  AsyncImage
+//  CachedImage
 //
 //  Created by Vadym Bulavin on 2/13/20.
 //  Copyright © 2020 Vadym Bulavin. All rights reserved.
@@ -18,7 +18,7 @@ let posters = [
 struct ContentView: View {
     var body: some View {
          List(posters, id: \.self) { url in
-             AsyncImage(
+             CachedImage(
                 url: url,
                 placeholder: { Text("Loading ...") },
                 image: { Image(uiImage: $0).resizable() }

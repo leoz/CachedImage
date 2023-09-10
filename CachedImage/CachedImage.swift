@@ -1,6 +1,6 @@
 //
-//  AsyncImage.swift
-//  AsyncImage
+//  CachedImage.swift
+//  CachedImage
 //
 //  Created by Vadym Bulavin on 2/13/20.
 //  Copyright © 2020 Vadym Bulavin. All rights reserved.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AsyncImage<Placeholder: View>: View {
+struct CachedImage<Placeholder: View>: View {
     @StateObject private var loader: ImageLoader
     private let placeholder: Placeholder
     private let image: (UIImage) -> Image

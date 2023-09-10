@@ -4,7 +4,7 @@
 
 ---
 
-# AsyncImage
+# CachedImage
 
 The project demonstrates how to load images asynchronously in SwiftUI.
 
@@ -22,7 +22,7 @@ let posters = [
 struct ContentView: View {
     var body: some View {
          List(posters, id: \.self) { url in
-             AsyncImage(
+             CachedImage(
                 url: url,
                 placeholder: { Text("Loading ...") },
                 image: { Image(uiImage: $0).resizable() }
@@ -36,5 +36,5 @@ struct ContentView: View {
 Result:
 
 <p align="center">
-  <img src="https://github.com/V8tr/AsyncImage/blob/master/demo.gif" alt="How to load image from URL asynchronously in SwiftUI"/>
+  <img src="https://github.com/V8tr/CachedImage/blob/master/demo.gif" alt="How to load image from URL asynchronously in SwiftUI"/>
 </p>

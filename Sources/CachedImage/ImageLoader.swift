@@ -7,10 +7,10 @@
 //
 
 import Combine
-import UIKit
+import SwiftUI
 
 class ImageLoader: ObservableObject {
-    @Published var image: UIImage?
+    @Published var image: PlatformImage?
 
     private(set) var isLoading = false
 
@@ -38,7 +38,7 @@ class ImageLoader: ObservableObject {
         }
 
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
-            .map { UIImage(data: $0.data) }
+            .map { PlatformImage(data: $0.data) }
             .replaceError(with: nil)
             .handleEvents(receiveSubscription: { [weak self] _ in self?.onStart() },
                           receiveOutput: { [weak self] in self?.cache($0) },
@@ -67,7 +67,7 @@ class ImageLoader: ObservableObject {
         isLoading = false
     }
 
-    private func cache(_ image: UIImage?) {
+    private func cache(_ image: PlatformImage?) {
         image.map { cache?[url] = $0 }
     }
 }

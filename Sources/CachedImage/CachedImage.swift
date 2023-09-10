@@ -11,13 +11,13 @@ import SwiftUI
 public struct CachedImage<Placeholder: View>: View {
     @StateObject private var loader: ImageLoader
     private let placeholder: Placeholder
-    private let image: (UIImage) -> Image
+    private let image: (PlatformImage) -> Image
     private let url: URL
 
     public init(
         url: URL,
         @ViewBuilder placeholder: () -> Placeholder,
-        @ViewBuilder image: @escaping (UIImage) -> Image = Image.init(uiImage:)
+        @ViewBuilder image: @escaping (PlatformImage) -> Image = Image.init(platformImage:)
     ) {
         self.placeholder = placeholder()
         self.image = image

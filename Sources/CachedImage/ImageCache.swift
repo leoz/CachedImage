@@ -6,21 +6,21 @@
 //  Copyright © 2020 Vadym Bulavin. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
 protocol ImageCache {
-    subscript(_ url: URL) -> UIImage? { get set }
+    subscript(_ url: URL) -> PlatformImage? { get set }
 }
 
 struct TemporaryImageCache: ImageCache {
-    private let cache: NSCache<NSURL, UIImage> = {
-        let cache = NSCache<NSURL, UIImage>()
+    private let cache: NSCache<NSURL, PlatformImage> = {
+        let cache = NSCache<NSURL, PlatformImage>()
         cache.countLimit = 100 // 100 items
         cache.totalCostLimit = 1024 * 1024 * 100 // 100 MB
         return cache
     }()
 
-    subscript(_ key: URL) -> UIImage? {
+    subscript(_ key: URL) -> PlatformImage? {
         get { cache.object(forKey: key as NSURL) }
         set {
             newValue == nil ?

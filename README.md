@@ -25,7 +25,7 @@ struct ContentView: View {
              CachedImage(
                 url: url,
                 placeholder: { Text("Loading ...") },
-                image: { Image(uiImage: $0).resizable() }
+                image: { Image(platformImage: $0).resizable() }
              )
             .frame(idealHeight: UIScreen.main.bounds.width / 2 * 3) // 2:3 aspect ratio
          }

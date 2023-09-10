@@ -14,7 +14,7 @@ public typealias PlatformImage = NSImage
 public typealias PlatformImage = UIImage
 #endif
 
-public extension Image {
+extension Image {
     @inlinable init(platformImage: PlatformImage) {
         #if os(macOS)
         self.init(nsImage: platformImage)

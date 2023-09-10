@@ -12,7 +12,8 @@ public struct CachedImage<Placeholder: View>: View {
     @StateObject private var loader: ImageLoader
     private let placeholder: Placeholder
     private let image: (UIImage) -> Image
-    
+    private let url: URL
+
     public init(
         url: URL,
         @ViewBuilder placeholder: () -> Placeholder,
@@ -20,12 +21,16 @@ public struct CachedImage<Placeholder: View>: View {
     ) {
         self.placeholder = placeholder()
         self.image = image
+        self.url = url
         _loader = StateObject(wrappedValue: ImageLoader(url: url, cache: Environment(\.imageCache).wrappedValue))
     }
     
     public var body: some View {
         content
             .onAppear(perform: loader.load)
+            .onChange(of: url) { newUrl in
+                loader.reload(url: newUrl)
+            }
     }
     
     private var content: some View {

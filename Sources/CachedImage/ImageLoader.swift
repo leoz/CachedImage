@@ -14,7 +14,7 @@ class ImageLoader: ObservableObject {
     
     private(set) var isLoading = false
     
-    private let url: URL
+    private var url: URL
     private var cache: ImageCache?
     private var cancellable: AnyCancellable?
     
@@ -48,7 +48,13 @@ class ImageLoader: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.image = $0 }
     }
-    
+
+    func reload(url: URL) {
+        cancel()
+        self.url = url
+        load()
+    }
+
     func cancel() {
         cancellable?.cancel()
     }

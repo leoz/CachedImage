@@ -10,10 +10,10 @@ import SwiftUI
 import CachedImage
 
 let posters = [
-    "https://image.tmdb.org/t/p/original//pThyQovXQrw2m0s9x82twj48Jq4.jpg",
-    "https://image.tmdb.org/t/p/original//vqzNJRH4YyquRiWxCCOH0aXggHI.jpg",
-    "https://image.tmdb.org/t/p/original//6ApDtO7xaWAfPqfi2IARXIzj8QS.jpg",
-    "https://image.tmdb.org/t/p/original//7GsM4mtM0worCtIVeiQt28HieeN.jpg"
+    "https://picsum.photos/800/600?random=1",
+    "https://picsum.photos/600/800?random=2",
+    "https://picsum.photos/800/600?random=3",
+    "https://picsum.photos/600/800?random=4"
 ].map { URL(string: $0)! }
 
 struct ContentView: View {
@@ -24,7 +24,7 @@ struct ContentView: View {
                 placeholder: { Text("Loading ...") },
                 image: { Image(platformImage: $0).resizable() }
              )
-            .frame(idealHeight: UIScreen.main.bounds.width / 2 * 3) // 2:3 aspect ratio
+            //.frame(idealHeight: UIScreen.main.bounds.width / 2 * 3) // 2:3 aspect ratio
          }
     }
 }

@@ -23,7 +23,10 @@ struct ContentView: View {
                 CachedImage(
                     url: url,
                     placeholder: { Text("Loading ...") },
-                    image: { Image(platformImage: $0).resizable() }
+                    content: { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
                 )
                 .frame(idealHeight: geometry.size.width / 2 * 3) // 2:3 aspect ratio
             }

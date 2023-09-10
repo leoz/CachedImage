@@ -8,38 +8,37 @@
 
 import SwiftUI
 
-public struct CachedImage<Placeholder: View>: View {
+public struct CachedImage<Placeholder: View, Content: View>: View {
     @StateObject private var loader: ImageLoader
     private let placeholder: Placeholder
-    private let image: (PlatformImage) -> Image
+    private let content: (Image) -> Content
     private let url: URL
 
     public init(
         url: URL,
-        @ViewBuilder placeholder: () -> Placeholder,
-        @ViewBuilder image: @escaping (PlatformImage) -> Image = Image.init(platformImage:)
+        placeholder: @escaping () -> Placeholder,
+        content: @escaping (Image) -> Content
     ) {
         self.placeholder = placeholder()
-        self.image = image
+        self.content = content
         self.url = url
         _loader = StateObject(wrappedValue: ImageLoader(url: url, cache: Environment(\.imageCache).wrappedValue))
     }
 
     public var body: some View {
-        content
+        contentOrImage
             .onAppear(perform: loader.load)
             .onChange(of: url) { newUrl in
                 loader.reload(url: newUrl)
             }
     }
 
-    private var content: some View {
-        Group {
-            if loader.image != nil {
-                image(loader.image!)
-            } else {
-                placeholder
-            }
+    @ViewBuilder
+    private var contentOrImage: some View {
+        if let platformImage = loader.image {
+            content(Image(platformImage: platformImage))
+        } else {
+            placeholder
         }
     }
 }

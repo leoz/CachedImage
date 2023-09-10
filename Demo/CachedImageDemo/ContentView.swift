@@ -22,13 +22,18 @@ struct ContentView: View {
             List(posters, id: \.self) { url in
                 CachedImage(
                     url: url,
-                    placeholder: { Text("Loading ...") },
                     content: { image in
-                        image.resizable()
+                        image
+                            .resizable()
                             .aspectRatio(contentMode: .fit)
+                    },
+                    placeholder: {
+                        Text("Loading ...")
                     }
                 )
-                .frame(idealHeight: geometry.size.width / 2 * 3) // 2:3 aspect ratio
+                .frame(
+                    idealHeight: geometry.size.width / 2 * 3
+                ) // 2:3 aspect ratio
             }
         }
     }

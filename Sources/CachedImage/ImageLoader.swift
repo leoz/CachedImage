@@ -19,12 +19,15 @@ class ImageLoader: ObservableObject {
 
     private static let imageProcessingQueue = DispatchQueue(label: "image-processing")
 
-    init(cache: ImageCache? = nil) {
-        self.cache = cache
+    init() {
     }
 
     deinit {
         cancel()
+    }
+
+    func setCache(cache: ImageCache? = nil) {
+        self.cache = cache
     }
 
     func load(url: URL) {

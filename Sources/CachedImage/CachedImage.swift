@@ -13,6 +13,7 @@ public struct CachedImage<Placeholder: View, Content: View>: View {
     private let content: (Image) -> Content
     private let placeholder: Placeholder
     @StateObject private var loader: ImageLoader
+    @Environment(\.imageCache) var imageCache
 
     public init(
         url: URL?,
@@ -23,15 +24,14 @@ public struct CachedImage<Placeholder: View, Content: View>: View {
         self.content = content
         self.placeholder = placeholder()
         _loader = StateObject(
-            wrappedValue: ImageLoader(
-                cache: Environment(\.imageCache).wrappedValue
-            )
+            wrappedValue: ImageLoader()
         )
     }
 
     public var body: some View {
         contentOrImage
             .onAppear {
+                loader.setCache(cache: _imageCache.wrappedValue)
                 if let _url = url {
                     loader.load(url: _url)
                 }

@@ -32,13 +32,13 @@ public struct CachedImage<Placeholder: View, Content: View>: View {
         contentOrImage
             .onAppear {
                 loader.setCache(cache: _imageCache.wrappedValue)
-                if let _url = url {
-                    loader.load(url: _url)
+                if let url = url {
+                    loader.load(url: url)
                 }
             }
             .onChange(of: url) { newUrl in
-                if let _url = newUrl {
-                    loader.reload(url: _url)
+                if let url = newUrl {
+                    loader.reload(url: url)
                 }
             }
     }

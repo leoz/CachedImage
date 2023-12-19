@@ -8,19 +8,33 @@
 
 import SwiftUI
 
-protocol ImageCache {
+public protocol ImageCache {
     subscript(_ url: URL) -> PlatformImage? { get set }
 }
 
-struct TemporaryImageCache: ImageCache {
-    private let cache: NSCache<NSURL, PlatformImage> = {
-        let cache = NSCache<NSURL, PlatformImage>()
-        cache.countLimit = 100 // 100 items
-        cache.totalCostLimit = 1024 * 1024 * 100 // 100 MB
-        return cache
-    }()
+public struct DefaultImageCache: ImageCache {
+    private let cache: NSCache<NSURL, PlatformImage>
 
-    subscript(_ key: URL) -> PlatformImage? {
+    public init(
+        countLimit: Int,
+        totalCostLimit: Int
+    ) {
+        self.cache = {
+            let cache = NSCache<NSURL, PlatformImage>()
+            cache.countLimit = countLimit
+            cache.totalCostLimit = totalCostLimit
+            return cache
+        }()
+    }
+
+    public init() {
+        self.init(
+            countLimit: 100, // 100 items
+            totalCostLimit: 1024 * 1024 * 100 // 100 MB
+        )
+    }
+
+    public subscript(_ key: URL) -> PlatformImage? {
         get { cache.object(forKey: key as NSURL) }
         set {
             newValue == nil ?

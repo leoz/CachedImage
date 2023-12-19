@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct ImageCacheKey: EnvironmentKey {
-    static let defaultValue: ImageCache = TemporaryImageCache()
+    static let defaultValue: ImageCache = DefaultImageCache()
 }
 
-extension EnvironmentValues {
+public extension EnvironmentValues {
     var imageCache: ImageCache {
         get { self[ImageCacheKey.self] }
         set { self[ImageCacheKey.self] = newValue }

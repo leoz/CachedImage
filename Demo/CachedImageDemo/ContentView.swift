@@ -9,7 +9,7 @@
 import SwiftUI
 import CachedImage
 
-let images = (0...20).map {
+let images = (0...200).map {
     "https://picsum.photos/800/600?random=\($0)"
 }
 let imageURLs = images.map {
@@ -17,6 +17,11 @@ let imageURLs = images.map {
 }
 
 struct ContentView: View {
+    let imageCache = DefaultImageCache(
+        countLimit: 10000, // 10000 items
+        totalCostLimit: 1024 * 1024 * 500 // 500 MB
+    )
+
     var body: some View {
         List(imageURLs, id: \.self) { url in
             CachedImage(
@@ -32,6 +37,7 @@ struct ContentView: View {
             )
             .scaledToFit()
         }
+        .environment(\.imageCache, imageCache)
     }
 }
 

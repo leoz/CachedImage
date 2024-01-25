@@ -30,12 +30,14 @@ struct ContentView: View {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .scaledToFit()
                 },
                 placeholder: {
-                    Text("Loading ...")
+                    ProgressView()
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
             )
-            .scaledToFit()
+            .listRowSeparator(.hidden)
         }
         .environment(\.imageCache, imageCache)
     }

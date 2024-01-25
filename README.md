@@ -6,7 +6,7 @@
 ![License](https://img.shields.io/github/license/leoz/CachedImage)
 
 <p align="center">
-    <img src=./Assets/demo.gif" style="margin: auto; width: 250px"/>
+    <img src="https://github.com/leoz/CachedImage/blob/master/Assets/demo.gif" style="margin: auto; width: 250px"/>
 </p>
 
 ## 🔭 Overview

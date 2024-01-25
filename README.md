@@ -1,13 +1,23 @@
 # CachedImage
 
+[![Build](https://github.com/leoz/CachedImage/actions/workflows/swift.yml/badge.svg?branch=master)](https://github.com/leoz/CachedImage/actions/workflows/swift.yml)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoz%2FCachedImage%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/leoz/CachedImage)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fleoz%2FCachedImage%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/leoz/CachedImage)
+![License](https://img.shields.io/github/license/leoz/CachedImage)
+
+<p align="center">
+    <img src=./Assets/demo.gif" style="margin: auto; width: 250px"/>
+</p>
+
+## 🔭 Overview
 
 `CachedImage` is a SwiftUI component to asynchronously load and display an image provided by its URL. 
 
 This package is based on the [AsyncImage](https://github.com/V8tr/AsyncImage) project published by [Vadim Bulavin](https://github.com/V8tr) and described in the [Asynchronous Image Loading from URL in SwiftUI](https://www.vadimbulavin.com/asynchronous-swiftui-image-loading-from-url-with-combine-and-swift/) article.
 
-## Usage
+## 🛠️ Usage
+
+### Quick Start
 
 ```swift
 import CachedImage
@@ -39,14 +49,14 @@ struct ContentView: View {
 }
 ```
 
-## Demo
+### Demo Program
 
-Check the demo project provided [here](./Demo/).
+Check the demo project provided here: [Demo](./Demo/).
 
-<p align="center">
-  <img src="./demo.gif" alt="How to load image from URL asynchronously in SwiftUI"/>
-</p>
+## ✍️ Author
 
-## License
+[Vadim Bulavin](https://github.com/V8tr) & [Leonid Zolotarev](https://github.com/leoz)
 
-[Unlicensed](./LICENSE.md)
+## 📃 License
+
+`CachedImage` is available under the Unlicense. See the [LICENSE](./LICENSE.md) file for more info.

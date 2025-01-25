@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D293B922D453AE1003821DD /* CachedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7D293B912D453AE1003821DD /* CachedImage */; };
 		7D3A8A532AAE1D370020BA74 /* CachedImageDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A8A522AAE1D370020BA74 /* CachedImageDemoApp.swift */; };
 		7D3A8A552AAE1D370020BA74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A8A542AAE1D370020BA74 /* ContentView.swift */; };
 		7D3A8A572AAE1D390020BA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3A8A562AAE1D390020BA74 /* Assets.xcassets */; };
 		7D3A8A5B2AAE1D390020BA74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3A8A5A2AAE1D390020BA74 /* Preview Assets.xcassets */; };
-		7DEE6EBB2AAE1DDA00530548 /* CachedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7DEE6EBA2AAE1DDA00530548 /* CachedImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DEE6EBB2AAE1DDA00530548 /* CachedImage in Frameworks */,
+				7D293B922D453AE1003821DD /* CachedImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,7 +40,6 @@
 		7D3A8A462AAE1D370020BA74 = {
 			isa = PBXGroup;
 			children = (
-				7D7738222AAE1DB80018C9DB /* Packages */,
 				7D3A8A512AAE1D370020BA74 /* CachedImageDemo */,
 				7D3A8A502AAE1D370020BA74 /* Products */,
 				7DEE6EB92AAE1DDA00530548 /* Frameworks */,
@@ -76,14 +75,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		7D7738222AAE1DB80018C9DB /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				7D7738232AAE1DB80018C9DB /* CachedImage */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		7DEE6EB92AAE1DDA00530548 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +99,7 @@
 			);
 			name = CachedImageDemo;
 			packageProductDependencies = (
-				7DEE6EBA2AAE1DDA00530548 /* CachedImage */,
+				7D293B912D453AE1003821DD /* CachedImage */,
 			);
 			productName = CachedImageDemo;
 			productReference = 7D3A8A4F2AAE1D370020BA74 /* CachedImageDemo.app */;
@@ -138,6 +129,9 @@
 				Base,
 			);
 			mainGroup = 7D3A8A462AAE1D370020BA74;
+			packageReferences = (
+				7D293B902D453AE1003821DD /* XCLocalSwiftPackageReference "../../CachedImage" */,
+			);
 			productRefGroup = 7D3A8A502AAE1D370020BA74 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -378,8 +372,15 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		7D293B902D453AE1003821DD /* XCLocalSwiftPackageReference "../../CachedImage" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../CachedImage;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		7DEE6EBA2AAE1DDA00530548 /* CachedImage */ = {
+		7D293B912D453AE1003821DD /* CachedImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CachedImage;
 		};

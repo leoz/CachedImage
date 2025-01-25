@@ -4,11 +4,11 @@ name: Build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
-concurrency: 
+concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
@@ -17,6 +17,7 @@ jobs:
     strategy:
       matrix:
         platform:
+          - macOS
           - iOS
         xcode:
           - ^15
@@ -24,14 +25,14 @@ jobs:
     runs-on: macos-13
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Get swift version
-      uses: swift-actions/setup-swift@v1
-    - name: Print Swift version
-      run: swift --version
-    - name: Build & Test
-      uses: mxcl/xcodebuild@v1
-      with:
-        xcode: ${{ matrix.xcode }}
-        platform: ${{ matrix.platform }}
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Get swift version
+        uses: swift-actions/setup-swift@v2
+      - name: Print Swift version
+        run: swift --version
+      - name: Build & Test
+        uses: mxcl/xcodebuild@v3
+        with:
+          xcode: ${{ matrix.xcode }}
+          platform: ${{ matrix.platform }}

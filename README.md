@@ -11,7 +11,7 @@
 
 ## 🔭 Overview
 
-`CachedImage` is a SwiftUI component to asynchronously load and display an image provided by its URL. 
+`CachedImage` is a SwiftUI component to asynchronously load and display an image provided by its URL.
 
 This package is based on the [AsyncImage](https://github.com/V8tr/AsyncImage) project published by [Vadim Bulavin](https://github.com/V8tr) and described in the [Asynchronous Image Loading from URL in SwiftUI](https://www.vadimbulavin.com/asynchronous-swiftui-image-loading-from-url-with-combine-and-swift/) article.
 

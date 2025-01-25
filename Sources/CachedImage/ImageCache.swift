@@ -29,17 +29,17 @@ public struct DefaultImageCache: ImageCache {
 
     public init() {
         self.init(
-            countLimit: 100, // 100 items
-            totalCostLimit: 1024 * 1024 * 100 // 100 MB
+            countLimit: 100,  // 100 items
+            totalCostLimit: 1024 * 1024 * 100  // 100 MB
         )
     }
 
     public subscript(_ key: URL) -> PlatformImage? {
         get { cache.object(forKey: key as NSURL) }
         set {
-            newValue == nil ?
-                cache.removeObject(forKey: key as NSURL) :
-                cache.setObject(newValue!, forKey: key as NSURL)
+            newValue == nil
+                ? cache.removeObject(forKey: key as NSURL)
+                : cache.setObject(newValue!, forKey: key as NSURL)
         }
     }
 }

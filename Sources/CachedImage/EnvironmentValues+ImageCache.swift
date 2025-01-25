@@ -12,8 +12,8 @@ struct ImageCacheKey: EnvironmentKey {
     static let defaultValue: ImageCache = DefaultImageCache()
 }
 
-public extension EnvironmentValues {
-    var imageCache: ImageCache {
+extension EnvironmentValues {
+    public var imageCache: ImageCache {
         get { self[ImageCacheKey.self] }
         set { self[ImageCacheKey.self] = newValue }
     }

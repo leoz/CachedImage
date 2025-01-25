@@ -41,10 +41,12 @@ class ImageLoader: ObservableObject {
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { PlatformImage(data: $0.data) }
             .replaceError(with: nil)
-            .handleEvents(receiveSubscription: { [weak self] _ in self?.onStart() },
-                          receiveOutput: { [weak self] in self?.cache($0, url) },
-                          receiveCompletion: { [weak self] _ in self?.onFinish() },
-                          receiveCancel: { [weak self] in self?.onFinish() })
+            .handleEvents(
+                receiveSubscription: { [weak self] _ in self?.onStart() },
+                receiveOutput: { [weak self] in self?.cache($0, url) },
+                receiveCompletion: { [weak self] _ in self?.onFinish() },
+                receiveCancel: { [weak self] in self?.onFinish() }
+            )
             .subscribe(on: Self.imageProcessingQueue)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.image = $0 }

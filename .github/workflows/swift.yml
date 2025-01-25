@@ -1,6 +1,9 @@
 # This workflow will build a Swift project
 
 name: Build
+permissions:
+  contents: read
+  pull-requests: write
 
 on:
   push:

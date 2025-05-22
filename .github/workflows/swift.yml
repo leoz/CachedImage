@@ -31,11 +31,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Get swift version
-        uses: swift-actions/setup-swift@d4537ff835c9778c934e48f78639e270edd5839e # v2.2.0
+        uses: swift-actions/setup-swift@682457186b71c25a884c45c06f859febbe259240 # v2.3.0
       - name: Print Swift version
         run: swift --version
       - name: Build & Test
-        uses: mxcl/xcodebuild@2cf0ec52b855fa777531c5c89b714caa7a3abd5e # v3.4.0
+        uses: mxcl/xcodebuild@e366f14791346edb74397fe9a762ccee86eddc06 # v3.5.1
         with:
           xcode: ${{ matrix.xcode }}
           platform: ${{ matrix.platform }}

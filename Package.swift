@@ -7,7 +7,7 @@ let package = Package(
     name: "CachedImage",
     platforms: [
         .iOS(.v16),
-        .macOS(.v13),
+        .macOS(.v13)
     ],
     products: [
         .library(
@@ -19,6 +19,6 @@ let package = Package(
             name: "CachedImage"),
         .testTarget(
             name: "CachedImageTests",
-            dependencies: ["CachedImage"]),
+            dependencies: ["CachedImage"])
     ]
 )

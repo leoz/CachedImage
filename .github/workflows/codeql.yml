@@ -46,7 +46,7 @@ jobs:
       shell: bash
       run: |
         xcodebuild build \
-        -project CachedImage/Demo/CachedImageDemo.xcodeproj \
+        -project ./Demo/CachedImageDemo.xcodeproj \
         -scheme CachedImageDemo \
         CODE_SIGNING_REQUIRED=NO \
         CODE_SIGNING_ALLOWED=NO
